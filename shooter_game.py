@@ -66,7 +66,7 @@ fire_sound = mixer.Sound('fire.ogg')
 mixer.music.play()
 
 win = display.set_mode((700,500))
-#nice
+
 display.set_caption('space shooter')
 background = transform.scale(image.load('galaxy.jpg'),(700,500))
 
@@ -81,9 +81,9 @@ asteroids = sprite.Group()
 for i in range(3):
     asteroid = Asteroid('asteroid.png',randint(200,500),50,3)
     asteroids.add(asteroid)
-lives = 2
+lives = 5
 mortality = True
-m_time = 1
+m_time = 2
 the_time = 0
 while game:
     import time
@@ -133,7 +133,7 @@ while game:
             score+=1
             ufo = Enemy('ufo.png',randint(50,650),50,randint(1,4))
             monsters.add(ufo)
-        if score == 25:
+        if score == 50:
             finish = True
             you_won = font.render('YOU WON!',True,(255,255,255))
             win.blit(you_won,(280,230))
